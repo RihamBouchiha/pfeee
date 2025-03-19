@@ -434,7 +434,7 @@ nav .profile-details i{
     width: calc(100% - 60px);
   }
 }
-/*
+
 .table-container {
   margin: 20px;
   padding: 20px;
@@ -468,5 +468,11 @@ tr:hover {
   background: #f1f1f1;
 }
 
-*/
+.add-button {
+    float: right;
+    background-color: #0d3073 !important; 
+    color: white;
+}
+
+  
 

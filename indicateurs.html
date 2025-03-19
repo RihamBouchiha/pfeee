@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title> IBGEA-QRQC </title>
-    <link rel="stylesheet" href="css/mainDashboard.css">
+    <link rel="stylesheet" href="css/mainIndicateurs.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
    </head>
 <body>
   <div class="sidebar">
@@ -15,13 +17,13 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="index.html">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">tableau de bord</span>
           </a>
         </li>
         <li>
-          <a href="indicateurs.html">
+          <a href="indicateurs.html" class="active">
             <i class='bx bx-box' ></i>
             <span class="links_name">Indicateurs-Actions</span>
           </a>
@@ -86,7 +88,7 @@
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Tableau de bord</span>
+        <span class="dashboard">Indicateurs-Actions</span>
       </div>
       <div class="search-box">
         <input type="text" placeholder="Search...">
@@ -98,6 +100,55 @@
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
+    <br><br><br>
+    <div class="table-container">
+        <button class="btn btn-primary add-button">Ajouter</button>
+
+    <br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Création</th>
+                    <th>Problème</th>
+                    <th>Actions</th>
+                    <th>Responsables</th>
+                    <th>Date fin</th>
+                    <th>Date replan</th>
+                    <th>Date clôture</th>
+                    <th>Status</th>
+                    <th>Capitalisation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>10/03/2025</td>
+                    <td>Problème de production</td>
+                    <td>Révision du processus</td>
+                    <td>John Doe</td>
+                    <td>20/03/2025</td>
+                    <td>25/03/2025</td>
+                    <td>30/03/2025</td>
+                    <td>En cours</td>
+                    <td>Documenté</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>12/03/2025</td>
+                    <td>Erreur qualité</td>
+                    <td>Formation équipe</td>
+                    <td>Jane Smith</td>
+                    <td>22/03/2025</td>
+                    <td>27/03/2025</td>
+                    <td>01/04/2025</td>
+                    <td>Terminé</td>
+                    <td>À vérifier</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
     <!-- <div class="home-content">
       <div class="overview-boxes">
         <div class="box">
