@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOH</title>
+    <link rel="stylesheet" href="css/foh.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">FOH</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="profile-details">
+                <img src="images/profile.jpg" alt="">
+                <span class="admin_name">Admin Name</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+
+        <br><br><br>
+        <div class="table-container">
+            <br>
+            <!-- Button to open the modal -->
+            <button class="btn btn-primary add-button" data-toggle="modal" data-target="#addModal">Ajouter</button>
+            <br>
+
+            <!-- Modal structure -->
+            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addModalLabel">Ajouter FOH</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="foh-form">
+                                <div class="form-group">
+                                    <label for="date">Date:</label>
+                                    <input type="date" class="form-control" id="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="qui">Qui:</label>
+                                    <input type="text" class="form-control" id="qui" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="statut">Statut:</label>
+                                    <input type="text" class="form-control" id="statut" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="regroupement">Regroupement:</label>
+                                    <input type="text" class="form-control" id="regroupement" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description écart:</label>
+                                    <input type="text" class="form-control" id="description" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contexte">Contexte-facteurs:</label>
+                                    <input type="text" class="form-control" id="contexte" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="consequences">Conséquences-risques:</label>
+                                    <input type="text" class="form-control" id="consequences" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="services">Services impactés:</label>
+                                    <input type="text" class="form-control" id="services" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="criticites">Criticités:</label>
+                                    <input type="text" class="form-control" id="criticites" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="action">Action corrective:</label>
+                                    <input type="text" class="form-control" id="action" required>
+                                </div>
+                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal End -->
+
+            <br><br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Qui</th>
+                        <th>Statut</th>
+                        <th>Regroupement</th>
+                        <th>Description écart</th>
+                        <th>Contexte-facteurs</th>
+                        <th>Conséquences-risques</th>
+                        <th>Services impactés</th>
+                        <th>Criticités</th>
+                        <th>Action corrective</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample data -->
+                    <tr>
+                        <td>10/03/2025</td>
+                        <td>Oufadel Issam</td>
+                        <td>En cours</td>
+                        <td>Production</td>
+                        <td>Problème de machine</td>
+                        <td>Défaillance mécanique</td>
+                        <td>Risque d'arrêt de production</td>
+                        <td>Services production</td>
+                        <td>Haute</td>
+                        <td>Réparation</td>
+                        <td>
+                            <button class="btn btn-info btn-sm" onclick="editRow(this)"><i class='bx bx-pencil'></i></button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteRow(this)"><i class='bx bx-trash'></i></button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- JavaScript for Bootstrap Modal -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById("foh-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var newRow = document.createElement("tr");
+
+            newRow.innerHTML = `
+                <td>${document.getElementById("date").value}</td>
+                <td>${document.getElementById("qui").value}</td>
+                <td>${document.getElementById("statut").value}</td>
+                <td>${document.getElementById("regroupement").value}</td>
+                <td>${document.getElementById("description").value}</td>
+                <td>${document.getElementById("contexte").value}</td>
+                <td>${document.getElementById("consequences").value}</td>
+                <td>${document.getElementById("services").value}</td>
+                <td>${document.getElementById("criticites").value}</td>
+                <td>${document.getElementById("action").value}</td>
+                <td>
+                    <button class="btn btn-info btn-sm" onclick="editRow(this)"><i class='bx bx-pencil'></i></button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteRow(this)"><i class='bx bx-trash'></i></button>
+                </td>
+            `;
+            
+            document.querySelector("table tbody").appendChild(newRow);
+            $('#addModal').modal('hide'); // Close the modal after submitting
+        });
+
+        function deleteRow(button) {
+            var row = button.closest("tr");
+            row.remove();
+        }
+
+        function editRow(button) {
+            var row = button.closest("tr");
+            // Add edit functionality here
+        }
+    </script>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+            if(sidebar.classList.contains("active")){
+                sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+            }else{
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+    </script>
+</body>
+</html>

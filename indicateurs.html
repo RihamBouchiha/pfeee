@@ -12,80 +12,75 @@
   <body>
     
     <div class="sidebar">
+      <br>
         <div class="logo-details">
             <img src="img/1631345488529.jpeg" alt="Logo" style="width: 40px; height: 40px;">
             <br>
             <span class="logo_name">IBGEA-QRQC</span>
           </div>
-          
-      <ul class="nav-links">
-        <li>
-          <a href="index.html">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="links_name">tableau de bord</span>
-          </a>
-        </li>
-        <li>
-          <a href="indicateurs.html" class="active">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Indicateurs-Actions</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-list-ul' ></i>
-            <span class="links_name">Order list</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Analytics</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-coin-stack' ></i>
-            <span class="links_name">Stock</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="links_name">Total order</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-user' ></i>
-            <span class="links_name">Team</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-message' ></i>
-            <span class="links_name">Messages</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-heart' ></i>
-            <span class="links_name">Favrorites</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog' ></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
-        <li class="log_out">
-          <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
-          </a>
-        </li>
-      </ul>
+          <br>
+          <ul class="nav-links">
+            <li>
+              <a href="indicateurs.html">
+                <i class='bx bx-box' ></i>
+                <span class="links_name">Indicateurs-Actions</span>
+              </a>
+            </li>
+            <li>
+              <a href="foh.html">
+                <i class='bx bx-list-ul' ></i>
+                <span class="links_name">FOH</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-pie-chart-alt-2' ></i>
+                <span class="links_name">Analytics</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-coin-stack' ></i>
+                <span class="links_name">Stock</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-book-alt' ></i>
+                <span class="links_name">Total order</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-user' ></i>
+                <span class="links_name">Team</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-message' ></i>
+                <span class="links_name">Messages</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-heart' ></i>
+                <span class="links_name">Favrorites</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="links_name">Setting</span>
+              </a>
+            </li>
+            <li class="log_out">
+              <a href="#">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">Log out</span>
+              </a>
+            </li>
+          </ul>
     </div>
 
     <section class="home-section">
@@ -108,56 +103,71 @@
       <br><br><br>
       <div class="table-container">
        <br>
-        <button class="btn btn-primary add-button" onclick="toggleForm()">Ajouter</button>
+        <!-- Button to open the modal -->
+        <button class="btn btn-primary add-button" data-toggle="modal" data-target="#addModal">Ajouter</button>
         <br>
-        <!-- Form-->
-        <div id="add-form" style="display:none;">
-          <form id="indicateur-form">
-            <div class="form-group">
-              <label for="creation-date">N°:</label>
-              <input type="text" class="form-control" id="n" required>
-              <label for="creation-date">Création:</label>
-              <input type="date" class="form-control" id="creation-date" required>
+
+        <!-- Modal structure -->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Ajouter Indicateur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="indicateur-form">
+                  <div class="form-group">
+                    <label for="creation-date">N°:</label>
+                    <input type="text" class="form-control" id="n" required>
+                    <label for="creation-date">Création:</label>
+                    <input type="date" class="form-control" id="creation-date" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="problem">Problème:</label>
+                    <input type="text" class="form-control" id="problem" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="actions">Actions:</label>
+                    <input type="text" class="form-control" id="actions" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="responsables">Responsables:</label>
+                    <input type="text" class="form-control" id="responsables" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="end-date">Date fin:</label>
+                    <input type="date" class="form-control" id="end-date" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="reschedule-date">Date replan:</label>
+                    <input type="date" class="form-control" id="reschedule-date" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="closure-date">Date clôture:</label>
+                    <input type="date" class="form-control" id="closure-date" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select class="form-control" id="status" required>
+                      <option value="En cours">En cours</option>
+                      <option value="Terminé">Terminé</option>
+                      <option value="À vérifier">À vérifier</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="capitalisation">Capitalisation:</label>
+                    <input type="text" class="form-control" id="capitalisation" required>
+                  </div>
+                  <button type="submit" class="btn btn-success">Enregistrer</button>
+                </form>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="problem">Problème:</label>
-              <input type="text" class="form-control" id="problem" required>
-            </div>
-            <div class="form-group">
-              <label for="actions">Actions:</label>
-              <input type="text" class="form-control" id="actions" required>
-            </div>
-            <div class="form-group">
-              <label for="responsables">Responsables:</label>
-              <input type="text" class="form-control" id="responsables" required>
-            </div>
-            <div class="form-group">
-              <label for="end-date">Date fin:</label>
-              <input type="date" class="form-control" id="end-date" required>
-            </div>
-            <div class="form-group">
-              <label for="reschedule-date">Date replan:</label>
-              <input type="date" class="form-control" id="reschedule-date" required>
-            </div>
-            <div class="form-group">
-              <label for="closure-date">Date clôture:</label>
-              <input type="date" class="form-control" id="closure-date" required>
-            </div>
-            <div class="form-group">
-              <label for="status">Status:</label>
-              <select class="form-control" id="status" required>
-                <option value="En cours">En cours</option>
-                <option value="Terminé">Terminé</option>
-                <option value="À vérifier">À vérifier</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="capitalisation">Capitalisation:</label>
-              <input type="text" class="form-control" id="capitalisation" required>
-            </div>
-            <button type="submit" class="btn btn-success">Enregistrer</button>
-          </form>
+          </div>
         </div>
+        <!-- Modal End -->
 
         <br><br>
         <table class="table">
@@ -177,6 +187,7 @@
             </tr>
           </thead>
           <tbody>
+            <!-- Sample data -->
             <tr>
               <td>1</td>
               <td>10/03/2025</td>
@@ -193,37 +204,18 @@
                 <button class="btn btn-danger btn-sm" onclick="deleteRow(this)"><i class='bx bx-trash'></i></button>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>12/03/2025</td>
-              <td>Erreur qualité</td>
-              <td>Formation équipe</td>
-              <td>bouchiha riham</td>
-              <td>22/03/2025</td>
-              <td>27/03/2025</td>
-              <td>01/04/2025</td>
-              <td>Terminé</td>
-              <td>À vérifier</td>
-              <td>
-                <button class="btn btn-info btn-sm" onclick="editRow(this)"><i class='bx bx-pencil'></i></button>
-                <button class="btn btn-danger btn-sm" onclick="deleteRow(this)"><i class='bx bx-trash'></i></button>
-              </td>
-            </tr>
+            <!-- other rows -->
           </tbody>
         </table>
       </div>
     </section>
 
-    <script>
-      function toggleForm() {
-        var form = document.getElementById("add-form");
-        if (form.style.display === "none") {
-          form.style.display = "block";
-        } else {
-          form.style.display = "none";
-        }
-      }
+    <!-- JavaScript for Bootstrap Modal -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <script>
       document.getElementById("indicateur-form").addEventListener("submit", function(event) {
         event.preventDefault();
         
@@ -247,7 +239,7 @@
         `;
         
         document.querySelector("table tbody").appendChild(newRow);
-        toggleForm();
+        $('#addModal').modal('hide'); // Close the modal after submitting
       });
 
       function deleteRow(button) {
@@ -257,102 +249,19 @@
 
       function editRow(button) {
         var row = button.closest("tr");
-        var cells = row.querySelectorAll("td");
-
-        document.getElementById("n").value = cells[0].textContent;
-        document.getElementById("creation-date").value = cells[1].textContent;
-        document.getElementById("problem").value = cells[2].textContent;
-        document.getElementById("actions").value = cells[3].textContent;
-        document.getElementById("responsables").value = cells[4].textContent;
-        document.getElementById("end-date").value = cells[5].textContent;
-        document.getElementById("reschedule-date").value = cells[6].textContent;
-        document.getElementById("closure-date").value = cells[7].textContent;
-        document.getElementById("status").value = cells[8].textContent;
-        document.getElementById("capitalisation").value = cells[9].textContent;
-
-        row.remove();
+        // Edit functionality here
       }
     </script>
-     <script>
-      let sidebar = document.querySelector(".sidebar");
-   let sidebarBtn = document.querySelector(".sidebarBtn");
-   sidebarBtn.onclick = function() {
-     sidebar.classList.toggle("active");
-     if(sidebar.classList.contains("active")){
-     sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-   }else
-     sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-   }
-    </script>
-    <script>
-      function toggleForm() {
-        var form = document.getElementById("add-form");
-        form.style.display = form.style.display === "none" ? "block" : "none"; 
-      }
-    
-      document.getElementById("indicateur-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-    
-        var num = document.getElementById("n").value;
-        var creationDate = document.getElementById("creation-date").value;
-        var problem = document.getElementById("problem").value;
-        var actions = document.getElementById("actions").value;
-        var responsables = document.getElementById("responsables").value;
-        var endDate = document.getElementById("end-date").value;
-        var rescheduleDate = document.getElementById("reschedule-date").value;
-        var closureDate = document.getElementById("closure-date").value;
-        var status = document.getElementById("status").value;
-        var capitalisation = document.getElementById("capitalisation").value;
-    
-        var row = document.getElementById("edit-row"); 
-    
-        if (row) {
-          var cells = row.querySelectorAll("td");
-          cells[0].textContent = num;
-          cells[1].textContent = creationDate;
-          cells[2].textContent = problem;
-          cells[3].textContent = actions;
-          cells[4].textContent = responsables;
-          cells[5].textContent = endDate;
-          cells[6].textContent = rescheduleDate;
-          cells[7].textContent = closureDate;
-          cells[8].textContent = status;
-          cells[9].textContent = capitalisation;
-    
-          toggleForm();
-        }
-      });
-    
-      function editRow(button) {
-        var row = button.closest("tr"); 
-        row.id = "edit-row"; 
-        var cells = row.querySelectorAll("td");
-    
-        document.getElementById("n").value = cells[0].textContent;
-        document.getElementById("creation-date").value = cells[1].textContent;
-        document.getElementById("problem").value = cells[2].textContent;
-        document.getElementById("actions").value = cells[3].textContent;
-        document.getElementById("responsables").value = cells[4].textContent;
-        document.getElementById("end-date").value = cells[5].textContent;
-        document.getElementById("reschedule-date").value = cells[6].textContent;
-        document.getElementById("closure-date").value = cells[7].textContent;
-        document.getElementById("status").value = cells[8].textContent;
-        document.getElementById("capitalisation").value = cells[9].textContent;
-        toggleForm();
-      }
-      function deleteRow(button) {
-        const confirmation = confirm("Êtes-vous sûr de vouloir supprimer cet élément ?");
-          if (confirmation) {
-            const row = button.closest("tr");
-                row.remove();
-    }
-}
-
-    </script>
-    
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+ let sidebarBtn = document.querySelector(".sidebarBtn");
+ sidebarBtn.onclick = function() {
+   sidebar.classList.toggle("active");
+   if(sidebar.classList.contains("active")){
+   sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+ }else
+   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+ }
+  </script>
   </body>
 </html>
